@@ -5,8 +5,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import AdoptForm from './AdoptForm';
-import {useRef} from 'react';
-import emailjs from '@emailjs/browser'
 // need to fetch the data
 
 const Adoption = () => {

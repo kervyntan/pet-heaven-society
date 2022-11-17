@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Navbar from './components/shared/Navbar';
 import Adoption from './components/Adoption';
 import Release from './components/Release';
+import Register from './components/Register';
 import './assets/main.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route element={<Adoption />} path="/adoption" />
       <Route element={<Release />} path="/release" />
+      <Route element={<Register />} path="/register" />
     </Routes>
     </div>
     </Router>

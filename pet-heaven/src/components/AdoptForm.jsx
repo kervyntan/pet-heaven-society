@@ -3,13 +3,10 @@ import { useState } from "react";
 import Button from "./shared/Button";
 import {useRef} from 'react';
 import emailjs from '@emailjs/browser'
-
+import {serviceID, templateID, pubKey} from './shared/data';
 // need to add form validation
 const AdoptForm = () => {
   const form = useRef();
-  const serviceID = 'service_ub6b22m';
-  const templateID = 'template_kkga2jv';
-  const pubKey = 'bZWDrA0RrWLv7nLvZ';
   const [userInput, setUserInput] = useState({
     person_name: "",
     reason: "",
@@ -64,7 +61,7 @@ const AdoptForm = () => {
           value={userInput.reason}
         />
 
-        <Button onClickHandler={submitForm} className="adopt-form-btn" text="I would like to adopt!"/>
+        <Button onClickHandler={submitForm} type="submit" className="adopt-form-btn" text="I would like to adopt!"/>
       </form>
     </>
   );

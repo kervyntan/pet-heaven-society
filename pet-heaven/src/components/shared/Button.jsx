@@ -4,7 +4,7 @@ const Button = (props) => {
   return (
     <button
       className={props.className}
-      type="submit"
+      type={props.type}
       onClick={props.onClickHandler}
     >
       {props.text}

@@ -41,13 +41,15 @@ a:visited {
 
 
 /* Adoption Form */
-.adopt-form {
+.adopt-form,
+.register-form {
     flex-direction : column;
     gap : 0.5rem;
 }
 
 .adopt-form > input,
-.adopt-form > select {
+.adopt-form > select,
+.register-form > input {
     width : 50%;
 }
 
@@ -60,3 +62,5 @@ a:visited {
     font-weight : 700;
     padding : 10px;
 }
+
+/* Register */
