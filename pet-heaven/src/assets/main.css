@@ -1,5 +1,8 @@
 :root {
-    
+    --clr-dark : black;
+    --clr-blue : blue;
+    --clr-white : #fff;
+    --clr-gray : gray;
 }
 
 *,
@@ -36,7 +39,7 @@ body {
 a,
 a:visited {
     text-decoration: none;
-    color:  black;
+    color: var(--clr-dark);
 }
 
 
@@ -53,14 +56,31 @@ a:visited {
     width : 50%;
 }
 
+button {
+    cursor : pointer;
+}
+
 .adopt-form-btn {
     width : fit-content;
     border-radius : 25px;
-    border : 1px solid gray;
-    background : black;
-    color : #fff;
+    border : 1px solid var(--clr-gray);
+    background : var(--clr-dark);
+    color : var(--clr-white);
     font-weight : 700;
     padding : 10px;
 }
 
+.adopt {
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+}
+
 /* Register */
+.view-password-btn {
+    width : fit-content;
+    border-radius : 25px;
+    border : 1px solid gray;
+    background : var(--clr-blue);
+    color : var(--clr-white);
+    padding : 10px;
+}
