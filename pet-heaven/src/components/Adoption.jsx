@@ -3,11 +3,12 @@
 // Form will be redirected to admins using emailjs
 
 import React from 'react';
+import AdoptForm from './AdoptForm';
 
 const Adoption = () => {
     return (
         <div className="container">
-        Hello
+            <AdoptForm />
         </div>
     )
 }

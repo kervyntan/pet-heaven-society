@@ -13,8 +13,12 @@ body {
     padding : 0;
 }
 
+.d-flex {
+    display : flex !important;
+}
+
 .container {
-    max-width : 720px;
+    max-width : 540px;
     margin : 0 auto;
 }
 
@@ -22,6 +26,7 @@ body {
     display : flex;
     gap : 1em;
     list-style: none;
+    padding : 0 !important;
 }
 
 .nav-list-item:nth-child(2) {
@@ -32,4 +37,26 @@ a,
 a:visited {
     text-decoration: none;
     color:  black;
+}
+
+
+/* Adoption Form */
+.adopt-form {
+    flex-direction : column;
+    gap : 0.5rem;
+}
+
+.adopt-form > input,
+.adopt-form > select {
+    width : 50%;
+}
+
+.adopt-form-btn {
+    width : fit-content;
+    border-radius : 25px;
+    border : 1px solid gray;
+    background : black;
+    color : #fff;
+    font-weight : 700;
+    padding : 10px;
 }
