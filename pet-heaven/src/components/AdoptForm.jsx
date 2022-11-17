@@ -1,9 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import Button from "./shared/Button";
+import {useRef} from 'react';
+import emailjs from '@emailjs/browser'
 
 // need to add form validation
 const AdoptForm = () => {
+  const form = useRef();
+  const serviceID = 'service_ub6b22m';
+  const templateID = 'template_kkga2jv';
+  const pubKey = 'bZWDrA0RrWLv7nLvZ';
   const [userInput, setUserInput] = useState({
     person_name: "",
     reason: "",
@@ -19,10 +25,18 @@ const AdoptForm = () => {
       person_name: "",
       reason: "",
     });
+
+    emailjs.sendForm(serviceID, templateID, form.current, pubKey)
+    .then( (result) => {
+        console.log(result.text);
+    }), (error) => {
+        console.log(error.text);
+    };
   };
+
   return (
     <>
-      <form action="submit" className="adopt-form d-flex">
+      <form ref={form} action="submit" className="adopt-form d-flex">
         <label htmlFor="person_name">Your Name:</label>
         <input
           type="text"
