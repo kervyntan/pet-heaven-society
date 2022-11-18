@@ -45,14 +45,16 @@ a:visited {
 
 /* Adoption Form */
 .adopt-form,
-.register-form {
+.register-form,
+.release-form {
     flex-direction : column;
     gap : 0.5rem;
 }
 
 .adopt-form > input,
 .adopt-form > select,
-.register-form > input {
+.register-form > input,
+.release-form > input {
     width : 50%;
 }
 
