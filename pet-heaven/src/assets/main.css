@@ -3,12 +3,14 @@
     --clr-blue : blue;
     --clr-white : #fff;
     --clr-gray : gray;
+    --clr-primary : #ad2c13;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    letter-spacing : 0.02em;
 }
 
 body {
@@ -29,7 +31,8 @@ body {
     display : flex;
     gap : 1em;
     list-style: none;
-    padding : 0 !important;
+    padding : 10px !important;
+    background: var(--clr-primary);
 }
 
 .nav-list-item:nth-child(2) {
@@ -39,7 +42,7 @@ body {
 a,
 a:visited {
     text-decoration: none;
-    color: var(--clr-dark);
+    color: var(--clr-white);
 }
 
 
@@ -62,6 +65,11 @@ button {
     cursor : pointer;
 }
 
+img {
+    width : 100%;
+    height : 100%;
+}
+
 .adopt-form-btn {
     width : fit-content;
     border-radius : 25px;
@@ -74,9 +82,18 @@ button {
 
 .adopt {
     display : grid;
-    grid-template-columns : 1fr 1fr;
+    grid-template-columns : 1fr 1fr 1fr;
+    grid-gap : 1em;
 }
 
+.dog-pic {
+    flex-direction : column;
+    /* margin-bottom : 40px; */
+}
+
+.dog-pic > h2 {
+    text-decoration : underline;
+} 
 /* Register */
 .view-password-btn {
     width : fit-content;

@@ -88,7 +88,7 @@ const Release = () => {
         />
 
         {/* upload photo of dog */}
-        <label for="img">Upload photo of your pet:</label>
+        <label htmlFor="img">Upload photo of your pet:</label>
         <input type="file" id="img" name="img" accept="image/*" />
 
         <label htmlFor="reason"> Reason for Release: </label>
