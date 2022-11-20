@@ -47,6 +47,7 @@ const Release = () => {
   };
   return (
     <>
+    <h2 className="release-form-heading"> We're sad to see your pet go. Let us handle it. </h2>
       <form ref={form} action="submit" className="release-form d-flex">
         <label htmlFor="person_name">Your Name:</label>
         <input
@@ -88,7 +89,7 @@ const Release = () => {
         />
 
         {/* upload photo of dog */}
-        <label htmlFor="img">Upload photo of your pet:</label>
+        <label htmlor="img">Upload photo of your pet:</label>
         <input type="file" id="img" name="img" accept="image/*" />
 
         <label htmlFor="reason"> Reason for Release: </label>
@@ -104,7 +105,7 @@ const Release = () => {
           onClickHandler={submitForm}
           type="submit"
           className="adopt-form-btn"
-          text="I would like to adopt!"
+          text="Release my pet."
         />
       </form>
     </>

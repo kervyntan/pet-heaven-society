@@ -33,6 +33,7 @@ const AdoptForm = () => {
 
   return (
     <>
+    <h2 className="adopt-form-heading"> Indicate your interest to adopt today! </h2>
       <form ref={form} action="submit" className="adopt-form d-flex">
         <label htmlFor="person_name">Your Name:</label>
         <input

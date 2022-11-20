@@ -4,7 +4,7 @@ const DogPic = (props) => {
     return (
         <div key={Math.random()} className="d-flex dog-pic">
         <h2> Tracy </h2>
-        <img src={props.src} />
+        <img width="250" height="250" src={props.src} />
         </div>
     )
 }

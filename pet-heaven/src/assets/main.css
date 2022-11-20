@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,500&display=swap');
 :root {
     --clr-dark : black;
-    --clr-blue : blue;
     --clr-white : #fff;
     --clr-gray : gray;
-    --clr-primary : #ad2c13;
+    --clr-primary : #ad2c13;    
+    --clr-adoption : #ad2c13;  
+    --clr-release : #ad2c13;  
+    --clr-register : #ad2c13;  
+    --clr-login : #ad2c13;  
+    --clr-home : #ad2c13;  
 }
 
 *,
@@ -25,16 +29,22 @@ body {
 }
 
 .container {
-    max-width : 540px;
+    max-width : 1080px;
     margin : 0 auto;
+}
+
+.nav {
+    background : var(--clr-primary);
 }
 
 .nav-list {
     display : flex;
     gap : 1em;
     list-style: none;
-    padding : 10px !important;
+    padding-inline-start: 0 !important;
+    padding-block : 10px; 
     background: var(--clr-primary);
+    margin : 0 !important;
 }
 
 .nav-list-item:nth-child(2) {
@@ -45,6 +55,7 @@ a,
 a:visited {
     text-decoration: none;
     color: var(--clr-white);
+    font-weight : 600;
 }
 
 
@@ -54,6 +65,11 @@ a:visited {
 .release-form {
     flex-direction : column;
     gap : 0.5rem;
+    /* background : var(--clr-primary); */
+    /* color : var(--clr-white); */
+    /* padding : 20px; */
+    font-weight : 700;
+    font-size : 1rem;
 }
 
 .adopt-form > input,
@@ -61,6 +77,7 @@ a:visited {
 .register-form > input,
 .release-form > input {
     width : 50%;
+    padding : 10px;
 }
 
 button {
@@ -76,7 +93,7 @@ img {
     width : fit-content;
     border-radius : 25px;
     border : 1px solid var(--clr-gray);
-    background : var(--clr-dark);
+    background : var(--clr-primary);
     color : var(--clr-white);
     font-weight : 700;
     padding : 10px;
@@ -101,7 +118,48 @@ img {
     width : fit-content;
     border-radius : 25px;
     border : 1px solid gray;
-    background : var(--clr-blue);
+    background : var(--clr-dark);
     color : var(--clr-white);
     padding : 10px;
 }
+
+:root:has(.adopt-form-heading) {
+    --clr-adoption : var(--clr-dark);
+}
+
+:root:has(.release-form-heading) {
+    --clr-release : var(--clr-dark);
+}
+
+:root:has(.register) {
+    --clr-register : var(--clr-dark);
+}
+:root:has(.login) {
+    --clr-login : var(--clr-dark);
+}
+
+:root:has(.home) {
+    --clr-home : var(--clr-dark);
+}
+
+
+.nav-adoption {
+    background : var(--clr-adoption);
+}
+
+.nav-release {
+    background : var(--clr-release);
+}
+
+.nav-register {
+    background : var(--clr-register);
+}
+
+.nav-login {
+    background : var(--clr-login);
+}
+
+.nav-home {
+    background : var(--clr-home);
+}
+

@@ -38,6 +38,7 @@ const Register = () => {
     }
     return (
     <div className="register">
+        <h2 className="register-form-heading"> Register today to become a supporter! </h2>
       <form ref={form} action="submit" className="register-form d-flex">
         <label htmlFor="username"> Username:</label>
         <input
