@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,500&display=swap');
 :root {
     --clr-dark : black;
     --clr-blue : blue;
@@ -16,6 +17,7 @@
 body {
     margin : 0;
     padding : 0;
+    font-family : Open Sans;
 }
 
 .d-flex {
