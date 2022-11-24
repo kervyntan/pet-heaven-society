@@ -1,11 +1,16 @@
 import React from 'react';
 import Button from './shared/Button';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { useState, useRef } from 'react';
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import {db, auth} from "./shared/firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
 const Login = () => {
     const form = useRef();
+    const navigate = useNavigate();
     const [userInput, setUserInput] = useState({
-        username : "",
+        email : "",
         password : ""
     })
 
@@ -17,6 +22,14 @@ const Login = () => {
         e.preventDefault();
         // check if user is in the local list of users
         // see if it's password matches
+        signInWithEmailAndPassword(auth, userInput.email, userInput.password)
+        .then( (userCred) => {
+            console.log(userCred.user);
+            navigate("/");
+        })
+        .catch( (err) => {
+            console.log(err.code);
+        })
     }
 
     const viewPassword = () => {
@@ -31,13 +44,13 @@ const Login = () => {
         <div className="login">
             <h2 className="login-form-heading"> Login : </h2>
             <form ref={form} action="submit" className="login-form d-flex">
-            <label htmlFor="username"> Username:</label>
+            <label htmlFor="email"> Email:</label>
             <input
             type="text"
-            id="username"
-            name="username"
+            id="email"
+            name="email"
             onChange={userInputHandler}
-            value={userInput.username}
+            value={userInput.email}
             />
 
             <label htmlFor="password"> Password: </label>

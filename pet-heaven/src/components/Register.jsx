@@ -2,10 +2,14 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import Button from "./shared/Button";
 import {serviceID, templateID, pubKey} from './shared/data';
+import { doc, setDoc, updateDoc } from "firebase/firestore";
+import {db, auth} from "./shared/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 const Register = () => {
     const form = useRef();
+    // const getAuthentication = getAuth();
     const [userInput, setUserInput] = useState({
-        username : "",
+        email : "",
         password : ""
     })
 
@@ -15,17 +19,22 @@ const Register = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
+
+        createUserWithEmailAndPassword(auth, userInput.email, userInput.password)
+        .then( (userCred)=> {
+          const user = userCred.user;
+          console.log(user);
+        })
+        .catch( (err) => {
+          const errorCode = err.code;
+          console.log(errorCode);
+        })
+
         setUserInput({
-          username: "",
+          email: "",
           password: "",
         });
         
-        emailjs.sendForm(serviceID, templateID, form.current, pubKey)
-        .then( (result) => {
-            console.log(result.text);
-        }), (error) => {
-            console.log(error.text);
-        };
     }
 
     const viewPassword = () => {
@@ -41,13 +50,13 @@ const Register = () => {
     <div className="register">
         <h2 className="register-form-heading"> Register today to become a supporter! </h2>
       <form ref={form} action="submit" className="register-form d-flex">
-        <label htmlFor="username"> Username:</label>
+        <label htmlFor="email"> Email:</label>
         <input
           type="text"
-          id="username"
-          name="username"
+          id="email"
+          name="email"
           onChange={userInputHandler}
-          value={userInput.username}
+          value={userInput.email}
         />
 
         <label htmlFor="password"> Password: </label>
