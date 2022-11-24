@@ -30,6 +30,7 @@ body {
 
 .container {
     max-width : 1080px;
+    padding-inline : 30px;
     margin : 0 auto;
 }
 
@@ -62,7 +63,8 @@ a:visited {
 /* Adoption Form */
 .adopt-form,
 .register-form,
-.release-form {
+.release-form,
+.login-form {
     flex-direction : column;
     gap : 0.5rem;
     /* background : var(--clr-primary); */
@@ -75,7 +77,8 @@ a:visited {
 .adopt-form > input,
 .adopt-form > select,
 .register-form > input,
-.release-form > input {
+.release-form > input,
+.login-form > input {
     width : 50%;
     padding : 10px;
 }
@@ -89,7 +92,9 @@ img {
     height : 100%;
 }
 
-.adopt-form-btn {
+.adopt-form-btn,
+.register-form-btn,
+.login-form-btn {
     width : fit-content;
     border-radius : 25px;
     border : 1px solid var(--clr-gray);
@@ -160,6 +165,8 @@ img {
 }
 
 .nav-home {
-    background : var(--clr-home);
+    background : var(--clr-home) !important;
+    /* padding : 20px; */
+    /* margin-top : 20px; */
 }
 

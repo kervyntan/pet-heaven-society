@@ -19,7 +19,7 @@ const Register = () => {
           username: "",
           password: "",
         });
-    
+        
         emailjs.sendForm(serviceID, templateID, form.current, pubKey)
         .then( (result) => {
             console.log(result.text);
@@ -36,6 +36,7 @@ const Register = () => {
             pw.type = "password";
         }
     }
+
     return (
     <div className="register">
         <h2 className="register-form-heading"> Register today to become a supporter! </h2>
@@ -60,7 +61,7 @@ const Register = () => {
         />
 
         <Button onClickHandler={viewPassword} type="button" className="view-password-btn" text="See Password"/>
-        <Button onClickHandler={submitForm} type="submit" className="adopt-form-btn" text="Register!"/>
+        <Button onClickHandler={submitForm} type="submit" className="register-form-btn" text="Register!"/>
       </form>
     </div>
     )

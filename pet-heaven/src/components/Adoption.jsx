@@ -38,7 +38,7 @@ console.log(items);
 
 
     return (
-        <div className="container">
+        <>
             <h2> Pets available for Adoption! </h2>
             <div className="adopt">
             {/* {!loading && */}
@@ -46,7 +46,7 @@ console.log(items);
                 {items}
             </div>
             <AdoptForm />
-        </div>
+        </>
     )
 }
 
