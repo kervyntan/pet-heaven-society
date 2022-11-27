@@ -24,10 +24,12 @@ const Register = () => {
         .then( (userCred)=> {
           const user = userCred.user;
           console.log(user);
+          alert("Yay!");
         })
         .catch( (err) => {
           const errorCode = err.code;
           console.log(errorCode);
+          alert(errorCode);
         })
 
         setUserInput({

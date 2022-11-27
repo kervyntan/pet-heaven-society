@@ -25,9 +25,11 @@ const Login = () => {
         signInWithEmailAndPassword(auth, userInput.email, userInput.password)
         .then( (userCred) => {
             console.log(userCred.user);
+            alert("Yay!");
             navigate("/");
         })
         .catch( (err) => {
+            alert(err.code);
             console.log(err.code);
         })
     }
